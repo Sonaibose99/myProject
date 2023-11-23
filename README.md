@@ -8,6 +8,10 @@ Let’s install npm packages required for this project:
 
 ## Available Scripts
 
+check currency Api for usage
+
+### `https://github.com/fawazahmed0/currency-api#readme`
+
 In the project directory, you can run:
 
 ### `npm start`

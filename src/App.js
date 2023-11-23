@@ -6,32 +6,24 @@ import "react-dropdown/style.css";
 import "./App.css";
 
 function App() {
+ 
+
+
   // Initializing all the state variables
-  // const [info, setInfo] = useState([]);
   const [input, setInput] = useState(0);
   const [from, setFrom] = useState("inr");
   const [to, setTo] = useState("eur");
   const [options, setOptions] = useState([]);
   const [output, setOutput] = useState(0);
 
-  // Calling the api whenever the dependency changes
-  // useEffect(() => {
-  //   Axios.get(
-  //     `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${from}.json`
-  //   ).then((res) => {
-  //     console.log(res.data[from]);
-  //     setInfo(res.data[from]);
-  //     setOptions(Object.keys(res.data[from]));
-  //   });
-  // }, [from]);
-
   useEffect(() => {
     Axios.get(
       "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json"
     ).then((cur) => {
+      console.log('currency list',Object.keys(cur.data), cur.data)
       setOptions(Object.keys(cur.data));
     });
-  }, [options]);
+  }, []);
 
   useEffect(() => {
     handleConvert();
