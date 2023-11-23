@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Axios from "axios";
-import Dropdown from "react-dropdown";
-import { HiSwitchHorizontal } from "react-icons/hi";
+import Axios from "axios"; //npm i axios
+import Dropdown from "react-dropdown"; // npm i react-dropdown
+import { HiSwitchHorizontal } from "react-icons/hi"; // npm install react-icons
 import "react-dropdown/style.css";
 import "./App.css";
 
-function App() {
- 
-
-
+const App = () => {
   // Initializing all the state variables
   const [input, setInput] = useState(0);
   const [from, setFrom] = useState("inr");
@@ -20,7 +17,7 @@ function App() {
     Axios.get(
       "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json"
     ).then((cur) => {
-      console.log('currency list',Object.keys(cur.data), cur.data)
+      console.log("currency list", Object.keys(cur.data), cur.data);
       setOptions(Object.keys(cur.data));
     });
   }, []);
@@ -107,6 +104,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
